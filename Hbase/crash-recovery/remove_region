@@ -1,0 +1,11 @@
+hadoop fs -ls /hbase/data/default/table | grep 02a2c75fd311c7dc53cc17ff12d65fc8
+
+
+echo "scan 'hbase:meta'" | hbase shell | grep 'table,13.32.136.116,1531324870386.02a2c75fd311c7dc53cc17ff12d65fc8.'
+
+
+deleteall 'hbase:meta', 'table,13.32.136.116,1531324870386.02a2c75fd311c7dc53cc17ff12d65fc8.'
+
+
+sudo -u hbase hadoop fs -rm -r /hbase/data/default/table/02a2c75fd311c7dc53cc17ff12d65fc8
+
